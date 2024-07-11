@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Text formating</title>
+</head>
+<body>
+	<table>
+		<tbody id="fTable">
+			<tr>
+				<td width="600" height="50"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td width="600" height="50"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td width="600" height="50"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td width="600" height="50">
+					<p>What formating element is <b>beeing used here</b>.</p>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td width="600" height="50">
+					<p>What formating element is <i>beeing used here</i>.</p>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td width="600" height="50">
+					<p>What formating element is <mark>beeing used here</mark>.</p>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td width="600" height="50">
+					<p>What formating element is <code>beeing used here</code>.</p>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td width="600" height="50">
+					<p>What formating element is <small>beeing used here</small>.</p>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td width="600" height="50">
+					<p>What formating element is <del>beeing used here</del>.</p>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td width="600" height="50">
+					<p>What formating element is <ins>beeing used here</ins>.</p>
+				</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td width="600" height="50"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td width="600" height="50"></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td width="600" height="50"></td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+	<script>
+		const elements = [
+			"<b><span><</span>b<span>></span></b>",
+			"<b><span><</span>i<span>></span></b>",
+			"<b><span><</span>mark<span>></span></b>",
+			"<b><span><</span>code<span>></span></b>",
+			"<b><span><</span>small<span>></span></b>",
+			"<b><span><</span>del<span>></span></b>",
+			"<b><span><</span>ins<span>></span></b>",
+			"<b><span><</span>p<span>></span></b>",
+			"<b><span><</span>h2<span>></span></b>",
+			"<b><span><</span>hr<span>></span></b>",
+			"<b><span><</span>img<span>></span></b>",
+			"<b><span><</span>title<span>></span></b>",
+			"<b><span><</span>br<span>></span></b>",
+		];
+		function shuffle(array) {
+			var currentIndex = array.length, temporaryValue, randomIndex;
+
+			// While there remain elements to shuffle...
+			while (0 !== currentIndex) {
+
+				// Pick a remaining element...
+				randomIndex = Math.floor(Math.random() * currentIndex);
+				currentIndex -= 1;
+
+				// And swap it with the current element.
+				temporaryValue = array[currentIndex];
+				array[currentIndex] = array[randomIndex];
+				array[randomIndex] = temporaryValue;
+			}
+
+			return array;
+		}
+		function loadTableData(elements) {
+			const table = document.getElementById("fTable");
+			for (var i = 0, row; row = table.rows[i]; i++) {
+				console.log(row.cells[1]);
+				row.cells[1].innerHTML = elements[i];
+			}
+		}
+		var shuffleElements = shuffle(elements);
+		loadTableData(shuffleElements);
+	</script>
+</body>
+</html>
